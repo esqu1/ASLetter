@@ -3,7 +3,7 @@ import json
 import uuid
 
 COG_URL1 = "https://api.cognitive.microsoft.com/sts/v1.0/issueToken"
-COG_URL2 = "https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=en-US&locale=en-US&format=json&requestid=6801d59a-9419-4d26-a6ba-77d456f06823"
+COG_URL2 = "https://speech.platform.bing.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US&locale=en-US&format=json&requestid=6801d59a-9419-4d26-a6ba-77d456f06823"
 
 def stream_audio_file(speech_file, chunk_size=1024):
     with open(speech_file, 'rb') as f:
@@ -27,6 +27,7 @@ def retrieve_transcript(file):
                         'Content-type': 'audio/wav; codec="audio/pcm"; samplerate=16000'
                     })
 
+    print(s.json())
     return s.json()['DisplayText']
                         
         
