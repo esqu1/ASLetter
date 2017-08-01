@@ -27,7 +27,6 @@ def retrieve_transcript(file):
                         'Content-type': 'audio/wav; codec="audio/pcm"; samplerate=16000'
                     })
 
-    print(s.json())
     return s.json()['DisplayText']
                         
         
